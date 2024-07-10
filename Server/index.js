@@ -1,10 +1,7 @@
-const dotenv = require('dotenv')
+require('dotenv').config()
 // Example using Express.js (replace with your connection string and collection name)
 const express = require('express');
 const mongoose = require('mongoose');
-dotenv.config({
-  path:'./.env'
-})
 
 const app = express();
 

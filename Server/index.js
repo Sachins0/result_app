@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 // Example using Express.js (replace with your connection string and collection name)
 const express = require('express');
 const mongoose = require('mongoose');

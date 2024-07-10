@@ -1,10 +1,14 @@
+import dotenv from 'dotenv'
 // Example using Express.js (replace with your connection string and collection name)
 const express = require('express');
 const mongoose = require('mongoose');
+dotenv.config({
+  path:'./.env'
+})
 
 const app = express();
 
-const uri = "mongodb+srv://ssinghroyal0:mNvwNhe7hax9f7xx@cluster0.jc64bkm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/";
+const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
@@ -30,4 +34,4 @@ app.get('/api/resultsdb', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Server listening on port 3000'));
+app.listen(process.env.PORT || 8000, () => console.log('Server listening on port 8000'));

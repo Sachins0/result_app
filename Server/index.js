@@ -2,8 +2,14 @@ require('dotenv').config()
 // Example using Express.js (replace with your connection string and collection name)
 const express = require('express');
 const mongoose = require('mongoose');
+const cors=require("cors")
 
 const app = express();
+
+app.use(cors({
+  origin: process.env.CORS_ORIGIN,
+  credentials: true
+}))
 
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })

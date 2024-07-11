@@ -14,7 +14,7 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true)
-        const response = await axios.get('http://localhost:8000/api/resultsdb'); // Adjust URL for your backend endpoint
+        const response = await axios.get('https://result-app-backend.onrender.com/api/resultsdb'); // Adjust URL for your backend endpoint
         setResults(response.data);
         setLoading(false)
       } catch (err) {
